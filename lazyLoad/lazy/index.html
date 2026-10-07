@@ -26,37 +26,38 @@
     <script>
         // 可视区域的高度
         const visibleHeight = window.innerHeight;
-        // console.log(visibleHeight);
 
-        // 懒加载函数
-        function lazyLoad(){
+        // 懒加载核心函数：把进入视口的图片的真实地址写入 src
+        function lazyLoad() {
             const imgs = document.querySelectorAll('img[lazyload]');
-            // console.log(imgs);
 
-            // 判断哪些 img 在可视区域内
-            imgs.forEach(item => {
-                console.log(123);
-                const rect = item.getBoundingClientRect();
-                if(rect.top < visibleHeight && rect.bottom >= 0){
-                    item.src = item.dataset.origin;
-                    item.removeAttribute('lazyload');
+            imgs.forEach((img) => {
+                const rect = img.getBoundingClientRect();
+                // top < 视口高度：图片顶边在视口下方以内（含已上滚的负数）
+                // bottom >= 0：图片底边没有完全滚出视口上方
+                // 两者同时满足 = 图片可见
+                if (rect.top < visibleHeight && rect.bottom >= 0) {
+                    img.src = img.dataset.origin;     // 触发真实图片加载
+                    img.removeAttribute('lazyload'); // 移除标记，避免重复处理
                 }
-            })
+            });
         }
-        lazyLoad();
-        // 监听滚动事件
+
+        lazyLoad(); // 首屏先执行一次，避免初始可见图片不加载
+
+        // 滚动时执行，使用节流降低触发频率
         window.addEventListener('scroll', throttle(lazyLoad, 200));
 
-        // 节流函数
-        function throttle(fn, await){  // 在规定时间内只执行一次
+        // 节流函数：规定时间内最多执行一次
+        function throttle(fn, wait) {
             let preTime = Date.now();
             return () => {
                 const nowTime = Date.now();
-                if (nowTime - preTime >= await){
+                if (nowTime - preTime >= wait) {
                     preTime = nowTime;
                     fn();
                 }
-            }
+            };
         }
     </script>
 </body>
