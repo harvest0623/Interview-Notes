@@ -12,6 +12,7 @@
 | --- | --- |
 | [HTML](HTML/) | HTML 高频面试题（DOCTYPE、语义化、表单、存储、性能等 26 题） |
 | [CSS](CSS/) | CSS 高频面试题（盒模型、BFC、布局、层叠、动画、响应式等 40+ 题） |
+| [JavaScript](JavaScript/) | JavaScript 高频面试题（数据类型、原型、闭包、事件循环、ES6+、手写题等 56 题） |
 | [输入URL到页面渲染](输入URL到页面渲染/) | 经典综合题：DNS → TCP → HTTP → 渲染全流程 |
 
 ### 网络篇（收录于「输入URL到页面渲染」）
