@@ -35,6 +35,12 @@
 | --- | --- |
 | [Python](Python/) | Python 高频面试题（按分册组织，共 70 题）：[语言基础篇](Python/01-语言基础篇.md)、[进阶原理篇](Python/02-进阶原理篇.md)、[并发编程篇](Python/03-并发编程篇.md)、[常用库与工程化篇](Python/04-常用库与工程化篇.md)、[实战与框架篇](Python/05-实战与框架篇.md) |
 
+### AI 应用篇
+
+| 目录 | 内容 |
+| --- | --- |
+| [LangChain](LangChain/) | LangChain / LangGraph 高频面试题（按分册组织，共 70 题）：[基础与 LCEL 篇](LangChain/01-基础与LCEL篇.md)、[Prompt 与模型篇](LangChain/02-Prompt与模型篇.md)、[RAG 与检索篇](LangChain/03-RAG与检索篇.md)、[Agent 与工具篇](LangChain/04-Agent与工具篇.md)、[生态与工程实践篇](LangChain/05-生态与工程实践篇.md) |
+
 ### 网络篇（收录于「输入URL到页面渲染」）
 
 | 文档 | 内容 |
